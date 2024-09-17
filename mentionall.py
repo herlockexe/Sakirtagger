@@ -34,31 +34,31 @@ async def cancel(event):
 
 @client.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
-  await event.reply("**@TrendTaggerBot🇹🇷**, Grup veya kanaldaki neredeyse tüm üyelerden bahsedebilirim ★\nDaha fazla bilgi için **/bilgi**'i tıklayın.",
+  await event.reply("**@BallasTaggerBot🇹🇷**, Grup veya kanaldaki neredeyse tüm üyelerden bahsedebilirim ★\nDaha fazla bilgi için **/bilgi**'i tıklayın.",
                     buttons=(
                       [
-                         Button.url('➕ BENİ GRUBA EKLE ➕ ', 'http://t.me/TrendTaggerBot?startgroup=a')
+                         Button.url('➕ BENİ GRUBA EKLE ➕ ', 'http://t.me/BallasTaggerBot?startgroup=a')
                       ],
                       [
-                         Button.url('Sohbet', 'https://t.me/KatillerCetesi'),
-                         Button.url('👮 Sahib', 'https://t.me/S1yahimsin'),
-                         Button.url('🎆 Sahib', 'https://t.me/GruzzBy')
+                         Button.url('Sohbet', 'https://t.me/Ballasresmi'),
+                         Button.url('👮 Sahib', 'https://t.me/BOT_RAMO'),
+                         Button.url('🎆 Sahib', 'https://t.me/umursuz')
                       ]
                     ),
                     link_preview=False
                    )
 @client.on(events.NewMessage(pattern="^/bilgi$"))
 async def help(event):
-  helptext = "**@TrendTaggerBot🇹🇷 Bot'un Yardım Menüsü**\n\nKomut: /utag \n  Bu komutu, başkalarına bahsetmek istediğiniz metinle birlikte kullanabilirsiniz. /etag  \n emoji ile etiketleme. \n`Örnek: /utag Günaydın!`  \nBu komutu yanıt olarak kullanabilirsiniz. herhangi bir mesaj Bot, yanıtlanan iletiye kullanıcıları etiketleyecek."
+  helptext = "**@BallasTaggerBot🇹🇷 Bot'un Yardım Menüsü**\n\nKomut: /utag \n  Bu komutu, başkalarına bahsetmek istediğiniz metinle birlikte kullanabilirsiniz. /etag  \n emoji ile etiketleme. \n`Örnek: /utag Günaydın!`  \nBu komutu yanıt olarak kullanabilirsiniz. herhangi bir mesaj Bot, yanıtlanan iletiye kullanıcıları etiketleyecek."
   await event.reply(helptext,
                     buttons=(
                       [
-                         Button.url('➕ BENİ GRUBA EKLE ➕ ', 'http://t.me/TrendTaggerBot?startgroup=a')
+                         Button.url('➕ BENİ GRUBA EKLE ➕ ', 'http://t.me/BallasTaggerBot?startgroup=a')
                       ],
                       [
-                         Button.url('Sohbet', 'https://t.me/KatillerCetesi'),
-                         Button.url('👮 Sahib', 'https://t.me/S1yahimsin'),
-                         Button.url('🎆 Sahib', 'https://t.me/GruzzBy')
+                         Button.url('Sohbet', 'https://t.me/Ballasresmi'),
+                         Button.url('👮 Sahib', 'https://t.me/BOT_RAMO'),
+                         Button.url('🎆 Sahib', 'https://t.me/umursuz')
                       ]
                     ),
                     link_preview=False
@@ -96,7 +96,7 @@ async def mentionall(event):
     usrtxt = ""
     async for usr in client.iter_participants(event.chat_id):
       usrnum += 1
-      usrtxt += f"👤 - [{usr.first_name}](tg://user?id={usr.id}) \n"
+      usrtxt += f"𝕭 - [{usr.first_name}](tg://user?id={usr.id}) \n"
       if event.chat_id not in anlik_calisan:
         await event.respond("İşlem Başarılı Bir Şekilde Durduruldu ❌")
         return
@@ -114,7 +114,7 @@ async def mentionall(event):
     usrtxt = ""
     async for usr in client.iter_participants(event.chat_id):
       usrnum += 1
-      usrtxt += f"👤 - [{usr.first_name}](tg://user?id={usr.id}) \n"
+      usrtxt += f"𝕭 - [{usr.first_name}](tg://user?id={usr.id}) \n"
       if event.chat_id not in anlik_calisan:
         await event.respond("İşlem Başarılı Bir Şekilde Durduruldu ❌")
         return
@@ -124,7 +124,7 @@ async def mentionall(event):
         usrnum = 0
         usrtxt = ""
 
-# Emoji Modulu (aykhan_s)
+# Emoji Modulu (BOT_RAMO)
 @client.on(events.NewMessage(pattern="^/itag ?(.*)"))
 async def etag(event):
   global anlik_calisan
@@ -277,7 +277,7 @@ async def mentionall(event):
       usrnum += 1
       usrtxt += f"**[{usr.first_name}](tg://user?id={usr.id})**"
       if event.chat_id not in tekli_calisan:
-        await event.respond("**Işlem Başarıyla Durduruldu\n\n**@TrendTaggerBot**❌****")
+        await event.respond("**Işlem Başarıyla Durduruldu\n\n**@BallasTaggerBot**❌****")
         return
       if usrnum == 1:
         await client.send_message(event.chat_id, f"{usrtxt} {msg}")
@@ -295,7 +295,7 @@ async def mentionall(event):
       usrnum += 1
       usrtxt += f"[{usr.first_name}](tg://user?id={usr.id})"
       if event.chat_id not in tekli_calisan:
-        await event.respond("Işlem Başarıyla Durduruldu\n\n**@TrendTaggerBot**❌**")
+        await event.respond("Işlem Başarıyla Durduruldu\n\n**@BallasTaggerBot**❌**")
         return
       if usrnum == 1:
         await client.send_message(event.chat_id, usrtxt, reply_to=msg)
@@ -303,5 +303,5 @@ async def mentionall(event):
         usrnum = 0
         usrtxt = ""
 
-print(">> Bot çalıyor merak etme 🚀 @tht_herlock bilgi alabilirsin <<")
+print(">> Bot çalıyor merak etme 🚀 @BOT_RAMO bilgi alabilirsin <<")
 client.run_until_disconnected()
